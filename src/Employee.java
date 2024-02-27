@@ -29,4 +29,19 @@ public class Employee{
         this.email = email;
         this.empNum = nextEmpNum++;
     }
+    
+    //Accessor method for name
+    public String getName(){
+        return name;
+    }
+    
+    //Accessor method for email
+    public String getEmail(){
+        return email;
+    }
+    
+    //Accessor method for employee unique number
+    public int getEmpNum(){
+        return empNum;
+    }
 }
