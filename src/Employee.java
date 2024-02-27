@@ -9,12 +9,22 @@
  */
 public class Employee{
      //private class with all of the employee information that is required
-    private int employeeNumber;
-    private String firstName;
-    private String lastName;
+    private int empNum;
+    private String name;
     private String email;
     
     //Static field to keep track of employee's number
     private static int nextEmpNum = 1;
     
+    //Constructor without parameters, initializes Employee object with default values
+    public Employee(){
+        this.name = "Default Name";
+        this.email = "deafault@example.com";
+        this.empNum = nextEmpNum++;
+        
+    //Construct with parameters to set custom name
+        this.name = name;
+        this.email = email;
+        this.empNum = nextEmpNum++;
+    }
 }
