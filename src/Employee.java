@@ -58,4 +58,8 @@ public class Employee{
         System.out.println("Invalid email format. Hence email not updated.");
     }
     }
+    //Static method to get next employee number
+    public static int getNextEmpNumb(){
+        return nextEmpNum;
+    }
 }
