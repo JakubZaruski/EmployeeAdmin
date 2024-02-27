@@ -14,5 +14,7 @@ public class Employee{
     private String lastName;
     private String email;
     
-  
+    //Static field to keep track of employee's number
+    private static int nextEmpNum = 1;
+    
 }
