@@ -7,6 +7,12 @@
  *
  * @author jakubzaruski
  */
-public class Employee {
+public class Employee{
+     //private class with all of the employee information that is required
+    private int employeeNumber;
+    private String firstName;
+    private String lastName;
+    private String email;
     
+  
 }
