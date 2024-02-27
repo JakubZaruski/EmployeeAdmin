@@ -21,8 +21,10 @@ public class Employee{
         this.name = "Default Name";
         this.email = "deafault@example.com";
         this.empNum = nextEmpNum++;
+    }
         
     //Construct with parameters to set custom name
+    public Employee(String name, String email){
         this.name = name;
         this.email = email;
         this.empNum = nextEmpNum++;
