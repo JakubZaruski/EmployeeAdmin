@@ -13,7 +13,8 @@ import java.util.regex.Pattern;
 public class Employee{
      //private class with all of the employee information that is required
     private int empNum;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     
     //Static field to keep track of employee's number
@@ -21,21 +22,28 @@ public class Employee{
     
     //Constructor without parameters, initializes Employee object with default values
     public Employee(){
-        this.name = "Default Name";
+        this.firstName = "Default";
+        this.lastName = "Name";
         this.email = "deafault@example.com";
         this.empNum = nextEmpNum++;
     }
         
     //Construct with parameters to set custom name
-    public Employee(String name, String email){
-        this.name = name;
+    public Employee(String firstName, String lastName, String email){
+        this.firstName = firstName;
+        this.lastName = lastName;
         setEmail(email);
         this.empNum = nextEmpNum++;
     }
     
-    //Accessor method for name
-    public String getName(){
-        return name;
+    //Accessor method for first name
+    public String getFirstName(){
+        return firstName;
+    }
+    
+    //Accessor method for last name
+    public String getLastName(){
+        return firstName;
     }
     
     //Accessor method for email
@@ -62,4 +70,6 @@ public class Employee{
     public static int getNextEmpNumb(){
         return nextEmpNum;
     }
+    
+   
 }
