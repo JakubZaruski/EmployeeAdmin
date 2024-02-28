@@ -23,5 +23,14 @@ public class EmployeeTest {
         //Variable m 
         int m = 1;
         
+        //Search and display the name of each of the employees
+        //Array of employee number above the value stored in m
+        System.out.println("Employees with Unique Employee Number greater than" + " " + m + ":");
+        for (Employee emp : projectGroup){
+            if(emp.getEmpNum()> m){
+                //Showing full name firstName and lastName
+                System.out.println(emp.getFirstName()+ "" +emp.getLastName());
+            }
+        }
     }
 }
