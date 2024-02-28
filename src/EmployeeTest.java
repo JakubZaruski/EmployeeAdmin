@@ -1,3 +1,6 @@
+
+import java.util.regex.Pattern;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -16,6 +19,17 @@ public class EmployeeTest {
         
         //An array called projectGroup and stores the 3 employees objects from above
         Employee[] projectGroup = {emp1, emp2, emp3};
+        
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        //Sample employee emails
+        String[] emails = {"jb@gmail.com", "ab@gmail.com", "tt@gmail.com"};
+        
+        for(String email : emails)
+            if (Pattern.matches(emailRegex, email)){
+                System.out.println(email + " is a valid email address.");
+            }else{
+                System.out.println(email + " is not a valid email address.");
+            }
         
         //Print out variable nextEmpNum to the terminal window
         System.out.println("Available employee number:" + Employee.getNextEmpNumb());
