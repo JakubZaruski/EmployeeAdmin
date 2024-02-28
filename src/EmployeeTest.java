@@ -20,5 +20,8 @@ public class EmployeeTest {
         //Print out variable nextEmpNum to the terminal window
         System.out.println("Available employee number:" + Employee.getNextEmpNumb());
         
+        //Variable m 
+        int m = 1;
+        
     }
 }
