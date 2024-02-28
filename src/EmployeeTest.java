@@ -17,5 +17,8 @@ public class EmployeeTest {
         //An array called projectGroup and stores the 3 employees objects from above
         Employee[] projectGroup = {emp1, emp2, emp3};
         
+        //Print out variable nextEmpNum to the terminal window
+        System.out.println("Available employee number:" + Employee.getNextEmpNumb());
+        
     }
 }
