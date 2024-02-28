@@ -21,7 +21,7 @@ public class EmployeeTest {
         System.out.println("Available employee number:" + Employee.getNextEmpNumb());
         
         //Variable m 
-        int m = 1;
+        int m = 0;
         
         //Search and display the name of each of the employees
         //Array of employee number above the value stored in m
@@ -29,7 +29,7 @@ public class EmployeeTest {
         for (Employee emp : projectGroup){
             if(emp.getEmpNum()> m){
                 //Showing full name firstName and lastName
-                System.out.println(emp.getFirstName()+ "" +emp.getLastName());
+                System.out.println(emp.toString());
             }
         }
     }

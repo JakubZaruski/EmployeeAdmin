@@ -32,7 +32,7 @@ public class Employee{
     public Employee(String firstName, String lastName, String email){
         this.firstName = firstName;
         this.lastName = lastName;
-        setEmail(email);
+        this.email = email;
         this.empNum = nextEmpNum++;
     }
     
@@ -70,6 +70,18 @@ public class Employee{
     public static int getNextEmpNumb(){
         return nextEmpNum;
     }
+    
+    //@Override to display names in correct format
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toString(){
+        return firstName + " " + lastName + " ("+ email +"), Employee Number:"+ empNum;
+    }
+            
     
    
 }
