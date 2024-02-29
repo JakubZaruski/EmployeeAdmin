@@ -23,5 +23,15 @@ public class Company {
         this.companyName = companyName;
         this.staff = new ArrayList<>();
     }
-            
+    
+    //Add new employee to the staff list
+    public void addNewStaff(Employee employee) {
+        staff.add(employee);
+    }
+    
+    //Return the current number of employees
+    public int getStaffNumber() {
+        return staff.size();
+    }
+           
 }
