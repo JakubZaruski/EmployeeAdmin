@@ -17,4 +17,11 @@ public class Company {
         this.companyName = "Default Company";
         this.staff = new ArrayList<>();
     }
+    
+    //Overloadded constructor allowing to name the company
+    public Company(String companyName){
+        this.companyName = companyName;
+        this.staff = new ArrayList<>();
+    }
+            
 }
