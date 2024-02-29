@@ -47,5 +47,20 @@ public class Company {
             }
         }
     }
+    
+    //Nested Manager class adding username and password
+    static class Manager extends Employee {
+        private String username;
+        private String password;
+        
+    //Construct for Manager
+        public Manager(String name, String email, String username, String password) {
+            super(name, email);
+            this.username = username;
+            this.password = password;
+        }
+        
+        
+    }
             
 }
