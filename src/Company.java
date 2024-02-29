@@ -12,5 +12,9 @@ public class Company {
     private String companyName;
     private ArrayList<Employee> staff;
     
-    
+    //Default constructor for this class which initialises all fields
+    public Company() {
+        this.companyName = "Default Company";
+        this.staff = new ArrayList<>();
+    }
 }
