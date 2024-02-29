@@ -1,3 +1,6 @@
+
+import java.util.Iterator;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -33,5 +36,16 @@ public class Company {
     public int getStaffNumber() {
         return staff.size();
     }
-           
+    
+    //List all employees with an employee number grater thand a specific value
+    public void listEmployees(int empNumThreshold) {
+        Iterator<Employee> iterator = staff.iterator();
+        while (iterator.hasNext()){
+            Employee emp = iterator.next();
+            if (emp.getEmpNum() > empNumThreshold) {
+                System.out.println(emp);
+            }
+        }
+    }
+            
 }
