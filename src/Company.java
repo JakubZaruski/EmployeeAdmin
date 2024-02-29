@@ -88,11 +88,37 @@ public class Company {
        String username = scanner.nextLine();
        System.out.println("Enter password:");
        String password = scanner.nextLine();
-    }
     
-    //Checks username/password if valid displays menu options
-    if("Gnomeo" .equals(username)) && "smurf" .equals(password)) {
-       boolean running = true;
+    
+    // Checks credentials; if valid, displays menu options
+        if ("Gnomeo".equals(username) && "smurf".equals(password)) {
+            boolean running = true;
+            while (running) {
+                System.out.println("1. View Current Staff\n2. Add New Staff\n3. Exit");
+                int choice = scanner.nextInt();
+                scanner.nextLine(); 
+                switch (choice) {
+                    case 1: // Lists current staff
+                        System.out.println("Current Staff:");
+                        company.listEmployees(0);
+                        break;
+                    case 2: // Adds a new staff member
+                        System.out.println("Enter Name:");
+                        String name = scanner.nextLine();
+                        System.out.println("Enter Email:");
+                        String email = scanner.nextLine();
+                        Employee newEmployee = new Employee(name, email);
+                        company.addNewStaff(newEmployee);
+                        System.out.println("New staff added.");
+                        break;
+                    case 3: // Exits the loop
+                        running = false;
+                        break;
+                }
+            }
+        } else {
+            System.out.println("Invalid login.");
+        }
     }
-            
+
 }

@@ -35,6 +35,10 @@ public class Employee{
         this.email = email;
         this.empNum = nextEmpNum++;
     }
+
+    Employee(String name, String email) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     //Accessor method for first name
     public String getFirstName(){
