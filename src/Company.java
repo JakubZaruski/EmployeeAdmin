@@ -1,5 +1,7 @@
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -79,7 +81,18 @@ public class Company {
     
     }
     
+    //Console menu for manager operations
+    public static void managerConsole(Company company) {
+        Scanner scanner = new Scanner(System.in);
+       System.out.println("Enter username:");
+       String username = scanner.nextLine();
+       System.out.println("Enter password:");
+       String password = scanner.nextLine();
+    }
     
-    
+    //Checks username/password if valid displays menu options
+    if("Gnomeo" .equals(username)) && "smurf" .equals(password)) {
+       boolean running = true;
+    }
             
 }
