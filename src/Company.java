@@ -13,33 +13,33 @@ import java.util.Scanner;
  * @author jakubzaruski
  */
 public class Company {
-    //Company name and list of employees
+    //Company name and list of employees.
     private String companyName;
     private ArrayList<Employee> staff;
     
-    //Default constructor for this class which initialises all fields
+    //Default constructor for this class which initialises all fields.
     public Company() {
         this.companyName = "Default Company";
         this.staff = new ArrayList<>();
     }
     
-    //Overloadded constructor allowing to name the company
+    //Overloadded constructor allowing to name the company.
     public Company(String companyName){
         this.companyName = companyName;
         this.staff = new ArrayList<>();
     }
     
-    //Add new employee to the staff list
+    //Add new employee to the staff list.
     public void addNewStaff(Employee employee) {
         staff.add(employee);
     }
     
-    //Return the current number of employees
+    //Return the current number of employees.
     public int getStaffNumber() {
         return staff.size();
     }
     
-    //List all employees with an employee number grater thand a specific value
+    //List all employees with an employee number grater thand a specific value.
     public void listEmployees(int empNumThreshold) {
         Iterator<Employee> iterator = staff.iterator();
         while (iterator.hasNext()){
@@ -49,20 +49,24 @@ public class Company {
             }
         }
     }
+
+    public void removeStaff(int empNumToRemove) {
+        staff.removeIf(emp -> emp.getEmpNum() == empNumToRemove); 
+    }
     
-    //Nested Manager class adding username and password
+    //Nested Manager class adding username and password.
     static class Manager extends Employee {
         private String username;
         private String password;
         
-    //Construct for Manager
+    //Construct for Manager.
         public Manager(String name, String email, String username, String password) {
             super(name, email);
             this.username = username;
             this.password = password;
         }
         
-    //Getters and setters for username and password
+    //Getters and setters for username and password.
     public String getUsername() {
         return username;
     }    
@@ -81,7 +85,7 @@ public class Company {
     
     }
     
-    //Console menu for manager operations
+    //Console menu for manager operations.
     public static void managerConsole(Company company) {
         Scanner scanner = new Scanner(System.in);
        System.out.println("Enter username:");
@@ -90,35 +94,49 @@ public class Company {
        String password = scanner.nextLine();
     
     
-    // Checks credentials; if valid, displays menu options
+    //Checks credentials; if valid, displays menu options.
         if ("Gnomeo".equals(username) && "smurf".equals(password)) {
             boolean running = true;
             while (running) {
-                System.out.println("1. View Current Staff\n2. Add New Staff\n3. Exit");
+                System.out.println("1. View Current Staff\n2. Add New Staff\n3. Remove Staff\n4.Exit");
                 int choice = scanner.nextInt();
                 scanner.nextLine(); 
                 switch (choice) {
-                    case 1: // Lists current staff
+                    case 1: //Lists current staff.
                         System.out.println("Current Staff:");
                         company.listEmployees(0);
                         break;
-                    case 2: // Adds a new staff member
+                    case 2: //Adds a new staff member.
                         System.out.println("Enter Name:");
                         String name = scanner.nextLine();
                         System.out.println("Enter Email:");
                         String email = scanner.nextLine();
                         Employee newEmployee = new Employee(name, email);
                         company.addNewStaff(newEmployee);
-                        System.out.println("New staff added.");
+                        System.out.println("New employee added.");
                         break;
-                    case 3: // Exits the loop
+                    case 3: //Remove Staff. 
+                        System.out.println("Enter Employee Number to be Removed:");
+                        int empNumToRemove = scanner.nextInt();
+                        scanner.nextLine();
+                        company.removeStaff(empNumToRemove);
+                        System.out.println("Employee Removed.");
+                        break; 
+                    case 4: // Exits the loop
                         running = false;
+                        System.out.println("See You Later.");
                         break;
                 }
             }
         } else {
             System.out.println("Invalid login.");
         }
+    }
+    
+    //Method to run the manager console.
+    public static void main(String[] args) {
+        Company company = new Company("Business Gnómes Ltd.");
+        managerConsole(company);
     }
 
 }

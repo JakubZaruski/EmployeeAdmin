@@ -21,7 +21,7 @@ public class Employee{
     private static int nextEmpNum = 1;
     
     //Constructor without parameters, initializes Employee object with default values
-    public Employee(){
+    public Employee(String name, String email1){
         this.firstName = "Default";
         this.lastName = "Name";
         this.email = "deafault@example.com";
@@ -36,9 +36,6 @@ public class Employee{
         this.empNum = nextEmpNum++;
     }
 
-    Employee(String name, String email) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     
     //Accessor method for first name
     public String getFirstName(){
