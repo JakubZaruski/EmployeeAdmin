@@ -122,7 +122,7 @@ public class Company {
                         company.removeStaff(empNumToRemove);
                         System.out.println("Employee Removed.");
                         break; 
-                    case 4: // Exits the loop
+                    case 4: // Exits the loop.
                         running = false;
                         System.out.println("See You Later.");
                         break;
@@ -133,6 +133,8 @@ public class Company {
         }
     }
     
+    
+    //Github repository: 
     //Method to run the manager console.
     public static void main(String[] args) {
         Company company = new Company("Business Gnómes Ltd.");

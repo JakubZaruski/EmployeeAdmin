@@ -11,16 +11,16 @@ import java.util.regex.Pattern;
  * @author jakubzaruski
  */
 public class Employee{
-     //private class with all of the employee information that is required
+     //private class with all of the employee information that is required.
     private int empNum;
     private String firstName;
     private String lastName;
     private String email;
     
-    //Static field to keep track of employee's number
+    //Static field to keep track of employee's number.
     private static int nextEmpNum = 1;
     
-    //Constructor without parameters, initializes Employee object with default values
+    //Constructor without parameters, initializes Employee object with default values.
     public Employee(String name, String email1){
         this.firstName = "Default";
         this.lastName = "Name";
@@ -28,7 +28,7 @@ public class Employee{
         this.empNum = nextEmpNum++;
     }
         
-    //Construct with parameters to set custom name
+    //Construct with parameters to set custom name.
     public Employee(String firstName, String lastName, String email){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -37,42 +37,42 @@ public class Employee{
     }
 
     
-    //Accessor method for first name
+    //Accessor method for first name.
     public String getFirstName(){
         return firstName;
     }
     
-    //Accessor method for last name
+    //Accessor method for last name.
     public String getLastName(){
         return firstName;
     }
     
-    //Accessor method for email
+    //Accessor method for email.
     public String getEmail(){
         return email;
     }
     
-    //Accessor method for employee unique number
+    //Accessor method for employee unique number.
     public int getEmpNum(){
         return empNum;
     }
     
-    //Set a new email if it matches valid email pattern as specified in the assigment
+    //Set a new email if it matches valid email pattern as specified in the assigment.
     public void setEmail(String email){
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-    //Check if email matches the pattern
+    //Check if email matches the pattern.
     if(Pattern.matches(emailRegex, email)){
         this.email = email;
     }else{
         System.out.println("Invalid email format. Hence email not updated.");
     }
     }
-    //Static method to get next employee number
+    //Static method to get next employee number.
     public static int getNextEmpNumb(){
         return nextEmpNum;
     }
     
-    //@Override to display names in correct format
+    //@Override to display names in correct format.
 
     /**
      *
